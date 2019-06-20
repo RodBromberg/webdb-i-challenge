@@ -51,11 +51,6 @@ server.post('/api/accounts', async(req, res) => {
     }
 });
 
-server.post('/api/accounts', (req, res) => {
-    const budget = db.add(req.body);
-    res.status(200).json(budget);
-});
-
 server.delete('/api/accounts/:id', async(req, res) => {
     try {
         const count = await db.remove(req.params.id)
